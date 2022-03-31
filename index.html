@@ -7,6 +7,31 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hola Cabros</h1>
+    <nav class="navbar navbar-expand-md sticky-top  navbar-dark bg-dark p-3">
+        <div class="container-fluid">
+             <a href="/index.html" class="navbar-brand">Can-cat</a>
+             <button type="button" 
+             class="navbar-toggler" 
+             data-bs-toggle="collapse" 
+             data-bs-target="#MenuNavegacion" 
+             aria-controls="MenuNavegacion" 
+             aria-expanded="false"
+             aria-label="Toggle navegation"> 
+                 <span class="navbar-toggler-icon"></span>
+             </button>
+             <div id="MenuNavegacion" class="collapse navbar-collapse">
+                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                     <li class="nav-item"><a class="nav-link active" href="/index.html">Home</a></li>
+                     <li class="nav-item"><a class="nav-link active" href="/catalogo.html">Catalogo</a></li>
+                     <li class="nav-item"><a class="nav-link active" href="#">Contacto</a></li>
+                     <li class="nav-item"><a class="nav-link active" href="#">Iniciar Secion</a></li>
+                 </ul>
+                 <form class="d-flex">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+             </div>
+        </div>
+    </nav>
 </body>
 </html>
