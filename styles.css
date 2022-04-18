@@ -1,42 +1,122 @@
 body{
-    background-color: antiquewhite;
-  }
-  
-  .card-body {
-    padding-top: 2.6rem;
-  }
-  
-  .home-title {
-    color: rgb(9, 9, 22);
-    text-align: center;
-    font-size: 2em;
-    font-weight: 300;
-    margin-bottom: 1rem;
-  }
-  .nav-link {
-    padding-right: 10rem;
-    padding-left: 1rem;
-  }
-  
-  h1{
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-    font-family: 'Fira Sans', sans-serif;
-  }
-  .formulario{
-    padding-left: 2rem;
-    padding-top: 5rem;
-  }
-  .btn-secondary{
-    padding-left: 1rem;
-  }
-  .carousel-inner{
-    padding-bottom: 2rem;
-  }
-  .text-body{
-    font-size: 25px;
-    padding: 0 5rem;
-  }
-  .text-title{
-    font-size: 32px;
-  }
+  font-family: 'Bebas Neue';
+  background-color: antiquewhite;
+  font-weight: 500;
+  font-style: normal;
+  box-sizing: border-box;
+  font-size: 1.2rem;
+  justify-content: center;
+
+}
+
+
+      /* NAVBAR ESTYLES  */
+.navbar{
+overflow: hidden;
+}
+
+.navbar button{
+background-color: #212529;
+border-color: #212529;
+}
+
+.navbar a {
+color: rgba(255, 255, 255, 0.9) !important;
+border: 2px transparent;
+border-color: #1c2428;  
+}
+
+.navbar a:hover{
+color: rgba(255, 255, 255, 1) !important;
+box-shadow: 0 4px 16px rgb(95, 99, 94);
+transition: all 0.2s ease;  
+}
+
+.sticky {
+position: fixed;
+top: 0;
+width: 100%;
+}
+
+.navbar-collapse{
+text-align: center;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#MenuNavegacion{
+font-size: 24px;
+padding: 0px;
+}
+.navbar-brand{
+font-size: 27px;
+}
+.nav-anuncio span{
+color: black;
+background-color: antiquewhite;
+}
+.nav-item{
+padding: 0.7rem;
+}
+
+#caja{
+width: 100%;
+margin: auto;
+height: 100%;
+background: rgb(209, 196, 196);
+}
+#nav-anuncio{
+font-size: 1px;
+}
+
+
+/*  TITULO PAGINA */
+.home-title {
+background-color: #FFFFFF;
+color: rgb(9, 9, 22);
+text-align: center;
+font-size: 2rem;
+font-weight: 300;
+margin:2rem;
+border: 2px solid;
+border-radius: 5px;
+}
+.card{
+border: 2px solid;
+border-radius: 10px;
+}
+
+/* TARJETAS   */
+#tarjetas h3{
+padding: 2rem;
+}
+
+#tarjetas button{
+border-radius: 4px;
+background-color: #bd1111;
+color: #FFFFFF;
+font-size: 18px;
+transition: all 0.5s;
+cursor: pointer;
+margin: 5px;
+}
+
+#tarjetas button:hover{
+color: rgb(194, 117, 117) !important;
+box-shadow: 0 4px 16px rgb(90, 32, 32);
+transition: all .3s ease;  
+}
+
+#tarjetas span{
+font-size: 22px;
+border: 2px solid;
+border-color: rgb(233, 216, 32);
+cursor: pointer;
+margin: 4px;
+}
+
+.carousel{
+padding: 2rem;
+}
+
