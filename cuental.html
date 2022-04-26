@@ -8,8 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f829be9907.js" crossorigin="anonymous"></script> 
     <link href="styles.css" rel="stylesheet" type="text/css">
-
-    <title>Crear Usuario</title>
+    <title>Iniciar Secion</title>
 </head>
 <body>
     <!-- BARRA NAVEGACION-->
@@ -47,89 +46,30 @@
             </div>
         </div>
     </nav>
-<!-- FORMULARIO-->
-    <div class="container-fluid" id="formulario" style="padding: 5rem;">
+  
+    <div class="container-fluid" id="formulario" style="padding: 5rem 5rem;">
         <form class="row needs-validation" novalidate>
-          <div class="row">
             <div class="col-md-6">
-              <label for="validationCustom01" class="form-label">Nombre</label>
+              <label for="validationCustom01" class="form-label">Usuario</label>
               <input type="text" class="form-control" id="validationCustom01" value="" required>
               <div class="valid-feedback">
                 se ve bien!
               </div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom02" class="form-label">Apellido</label>
-              <input type="text" class="form-control" id="validationCustom02" value="" required>
-              <div class="valid-feedback">
-                se ve bien!
-              </div>
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustomUsername" class="form-label">Nombre Usuario</label>
-              <div class="input-group has-validation">
-                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-                <div class="invalid-feedback">
-                  Please choose a username.
-                </div>
-              </div>
-            </div>
+            </div> 
             <div class="col-md-6">
               <label for="validationCustom02" class="form-label">Contraseña</label>
               <input type="text" class="form-control" id="validationCustom02" value="" required>
               <div class="valid-feedback">
                 se ve bien!
-            </div>
-            <div class="col-md-6">
-              <label for="validationCustom03" class="form-label">Ciudad</label>
-              <input type="text" class="form-control" id="validationCustom03" required>
-              <div class="invalid-feedback">
-                Please provide a valid city.
               </div>
             </div>
-            <div class="col-md-6 position-relative">
-              <label for="validationCustom04" class="form-label">Comuna</label>
-              <select class="form-select" id="validationCustom04" required>
-                <option selected disabled value="">Seleccione</option>
-                <option>Sntgo Centro</option>
-                <option>Pudahuel</option>
-                <option>La Reina</option>
-                <option>Providencia</option>
-                <option>San Joaquin</option>
-                <option>La Florida</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid state.
-              </div>
+            <div class="row" style="margin-left: 10rem; padding: 3rem;">
+              <button class="btn btn-primary col-md-2" type="submit">Ingresar</button>
             </div>
-            <div class="col-md-6">
-              <label for="validationCustom05" class="form-label">codigo postal</label>
-              <input type="text" class="form-control" id="validationCustom05" required>
-              <div class="invalid-feedback">
-                Please provide a valid zip.
-              </div>
-            </div>
-            <div class="col-md-12">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                <label class="form-check-label" for="invalidCheck">
-                  Aceptas terminos y condiciones
-                </label>
-                <div class="invalid-feedback">
-                  You must agree before submitting.
-                </div>
-              </div>
-            </div>
-            <div class="col-md-12">
-              <button class="btn btn-primary" type="submit">Ingresar</button>
-            </div>
-            </div>
-          </div>    
-      </form>
+       </form>
     </div>
-</body>
 
+</body>
 
 <footer class="bg-dark text-center text-white" width="100">
   <div class="container p-4 pb-0">
@@ -157,5 +97,4 @@
   </div>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
 </html>
