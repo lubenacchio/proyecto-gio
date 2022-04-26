@@ -10,52 +10,93 @@
     <!-- google foont-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
     <link href="styles.css" rel="stylesheet" type="text/css">
     <title>Can-cat</title>
+
 </head>
-  <!-- BARRA NAVEGACION-->
-<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark p-3">
-  <div class="container-fluid">
-        <img src="./img indice/can-cat.png" width="70">
-        <a href="/index.html" class="navbar-brand">Can-Cat</a>
-        <button type="button" 
-        class="navbar-toggler" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#MenuNavegacion" 
-        aria-controls="MenuNavegacion" 
-        aria-expanded="false"
-        aria-label="Toggle navegation"> 
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="MenuNavegacion" class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="/index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/catalogo.html">Catalogo</a></li>
-            </ul>
-            <div class="dropdown"> <!-- Menu desplegable-->
-               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 12px;"><i class="fa-solid fa-user"></i>
-               </button>
-               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                 <li><a class="dropdown-item" href="./sesion.html">Crear Cuenta</a></li>
-                 <li><a class="dropdown-item" href="./cuenta.html">Iniciar Secion</a></li>
-                 <li><a class="dropdown-item" href="./carrito.html">Mi carrito</a></li>
-               </ul>
+<body id="collections">
+  <div class="header-nav">
+    <section class="Header">
+      <header class="header">
+        <div class="header-anuncement">
+          <nav id="nav-anuncio" class="navbar sticky-top">
+            <div class="container-fluid">
+              <span class="navbar-brand h4">ESTE ES UN ANUNCIO</span>
+              <a class="navbar-brand" href="#"><i class="fa-solid fa-question"></i></a>
             </div>
-             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
+          </nav>
+        <nav  id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+          <div class="container-fluid ">
+            <img src="./img indice/can-cat.png" class="navbar-brand" width="50">
+            <a href="/index.html" class="navbar-brand">Can-Cat</a>
+            <button type="button" 
+                  class="navbar-toggler" 
+                  data-bs-toggle="collapse" 
+                  data-bs-target="#MenuNavegacion" 
+                  aria-controls="Menu" 
+                  aria-expanded="false"
+                  aria-label="Toggle navegation"> 
+                    <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="MenuNavegacion">
+              <ul class="navbar-nav m-lg-auto" id="lista1">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/index.html">CATALOGO</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/catalogo.html">OFERTAS</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/catalogo.html">SUSCRIBIRSE</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/catalogo.html">SOBRE NOSOTROS</a>
+                  </li>
+              </ul>
+              <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
+                 <li class="nav-item">
+                    <a class="nav-link active" href="/index.html">
+                      <i class="fa-regular fa-circle-user"></i>
+                    </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="/index.html">
+                    <i class="fa-regular fa-heart"></i>
+                   </a>
+                 </li>
+                 <li class="nav-item">
+                    <button  id="boton" onclick="muestra_oculta('caja')" class="boton_mostrar">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                  </li>
+                 <li class="nav-item">
+                   <a class="nav-link active" href="/index.html">
+                     <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                  </li>
+              </ul>  
+             </div>
           </div>
+        </nav>
+        </div>
+      </header>
+      <div id="caja"> 
+        <form class="d-flex" id="form1">
+          <input id="input1" class="form-control" type="search" placeholder="Buscar" aria-label="Search">
+          <button id="botoncito" class="btn btn-outline-success" type="submit">Buscar</button>
+        </form>
+      </div>
+    </section>
   </div>
-</nav>
-<body>
     <!-- CARRUSEL-->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -68,24 +109,23 @@
           <img src="./img indice/gato-con-juguete_3840x2160_xtrafondos.com (1).jpg" class="d-block w-100" alt="im3 3">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Anterior</span>
       </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Siguiente</span>
       </button>
   </div>
     <!-- Titulo pagina-->
-  <div class="row justify-content-center">
     <div class="home-title">
-      <h1 style="font-family: 'Bebas Neue', cursive;">Can Cat</h1>
-      <h4 style="font-family: 'Bebas Neue', cursive;">Una tienda sin fines de lucro</h4>
+      <h1>Somos Can Cat</h1>
+      <h4>Una tienda sin fines de lucro</h4>
+      <h5>Encuentra todos los articulos y accesorios de mascotas</h5>
     </div>
-  </div>  
  <!-- Seccion de Ofertas--> 
-  <div class="row justify-content-center p-md-5">
+  <div id="tarjetas" class="row p-md-5">
     <h3 style="text-align: center; font-style: italic; font-size: 50px;">Ultimos Agregados</h3>
     <div class="col-md-4">
         <div class="card" >
@@ -95,6 +135,7 @@
                 <p class="card-text-center">cama ecologica elavorada con botellas recicladas color azul con gris</p>
                 <a href="#" class="btn btn-primary">Agregar al carrito</a>
                 <button type="button" class="btn btn-danger" >♡</button>
+                <span>clp 5000</span>
             </div>
         </div>
     </div>
@@ -189,4 +230,5 @@
 <!-- script -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+<script src="./java.js"></script>
 </html>
