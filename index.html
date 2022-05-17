@@ -7,49 +7,95 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/f829be9907.js" crossorigin="anonymous"></script> 
-    <!-- google foont-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <link href="styles.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/java.js"></script>
+    <link rel="shortcut icon" href="./img indice/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img indice/favicon.ico" type="image/x-icon">
     <title>Can-cat</title>
 </head>
   <!-- BARRA NAVEGACION-->
-<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark p-3">
-  <div class="container-fluid">
-        <img src="./img indice/can-cat.png" width="70">
-        <a href="/index.html" class="navbar-brand">Can-Cat</a>
-        <button type="button" 
-        class="navbar-toggler" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#MenuNavegacion" 
-        aria-controls="MenuNavegacion" 
-        aria-expanded="false"
-        aria-label="Toggle navegation"> 
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="MenuNavegacion" class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" href="/index.html">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link active" href="/catalogo.html">Catalogo</a></li>
-            </ul>
-            <div class="dropdown"> <!-- Menu desplegable-->
-               <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 12px;"><i class="fa-solid fa-user"></i>
-               </button>
-               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                 <li><a class="dropdown-item" href="./sesion.html">Crear Cuenta</a></li>
-                 <li><a class="dropdown-item" href="./cuenta.html">Iniciar Secion</a></li>
-                 <li><a class="dropdown-item" href="./carrito.html">Mi carrito</a></li>
-               </ul>
+<body id="collections">
+    <div class="header-nav">
+      <section class="Header">
+        <div class="header-anuncement">
+          <nav id="nav-anuncio">
+            <div class="container-fluid">
+              <div class="row">
+                <marquee behavior="" direction="">
+                  <span id="miSpan"></span>
+              </div>
+              <div class="row">
+                <button id="ubicame">Ubícame</button>
+                <img id="mapa" />
+              </div>
+              </marquee>
+              </div>
             </div>
-             <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
-              <button class="btn btn-outline-success" type="submit">Buscar</button>
-            </form>
+          </nav>
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <img src="./img indice/can-cat.png" class="navbar-brand" width="50">
+              <a href="/index.html" class="navbar-brand">Can-Cat</a>
+              <button type="button" 
+                    class="navbar-toggler" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#MenuNavegacion" 
+                    aria-controls="Menu" 
+                    aria-expanded="false"
+                    aria-label="Toggle navegation"> 
+                      <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="MenuNavegacion">
+                <ul class="navbar-nav m-lg-auto" id="lista1">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/catalogo.html">CATALOGO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/catalogo.html">OFERTAS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/suscripcion.html">SUSCRIBIRSE</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/sobreNosotros.html">SOBRE NOSOTROS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
+                   <li class="nav-item">
+                      <a class="nav-link active" href="/usuario.html">
+                        <i class="fa-regular fa-circle-user"></i>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/meGusta.html">
+                      <i class="fa-regular fa-heart"></i>
+                     </a>
+                   </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/index.html">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                     </a>
+                   </li>
+
+                   <li class="nav-item">
+                     <a class="nav-link active" href="/carrito.html">
+                       <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                </ul>  
+               </div>
+            </div>
+          </nav>
           </div>
-  </div>
-</nav>
-<body>
+      </section>
+    </div>
     <!-- CARRUSEL-->
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
@@ -120,8 +166,8 @@
             </div>
         </div>
     </div>
-</div>
-<div class="row justify-content-center p-md-5">
+  </div>
+  <div class="row justify-content-center p-md-5">
     <h3 style="text-align: center; font-style: italic; font-size: 50px; padding-bottom: 4rem;">Mas vendidos</h3>
     <div class="col-md-4">
         <div class="card" >
@@ -157,36 +203,31 @@
         </div>
     </div>
 </div>
-
-
-</body>
 <!-- Footer -->
-<footer class="bg-dark text-center text-white" width="100">
-  <div class="container p-4 pb-0">
-    <section class="mb-4">
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fa-brands fa-whatsapp"></i
-      ></a>
-    </section>
-  </div>
-  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-    © 2022 Copyright:
-    <a class="text-white" href="https://cancat.com/">cancat.com</a>
-  </div>
-</footer>
-<!-- script -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-</html>
+  <footer class="bg-dark text-center text-white" width="100">
+    <div class="container p-4 pb-0">
+      <section class="mb-4">
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-twitter"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-google"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+          ><i class="fa-brands fa-whatsapp"></i
+        ></a>
+      </section>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-white" href="https://cancat.com/">cancat.com</a>
+    </div>
+  </footer>
+</body>
+</html>    

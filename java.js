@@ -1,173 +1,141 @@
 // VALIDACION DE FORMULARIO
-
 $(document).ready(
+    
     function(){
 
         var mensaje="";
 
         $("#alerta").hide();
 
-        $("#nombre").focusout(function(){
-            if ($("#nombre").val().trim().length == 0) {
-                alert("debe ingresar el nombre")
-
-                mensaje = "debe ingresar un nombre";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-        $("#apellido").focusout(function(){
-            if ($("#apellido").val().trim().length == 0) {
-                alert("debe ingresar el nombre")
-
-                mensaje = "debe ingresar un apellido";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-        $("#nombreUsuario").focusout(function(){
-            if ($("#nombreUsuario").val().trim().length == 0) {
-                alert("debe ingresar el nombre de usuario")
-
-                mensaje = "debe ingresar un nombre de usuario";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-        $("#mail").focusout(function(){
-            if ($("#mail").val().trim().length == 0) {
-                alert("debe ingresar el mail")
-
-                mensaje = "debe ingresar un mail";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-        $("#contraseña").focusout(function(){
-            if ($("#contraseña").val().trim().length == 0) {
-                alert("debe ingresar una contraseña")
-
-                mensaje = "debe ingresar una contraseña";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-        $("#ciudad").focusout(function(){
-            if ($("#ciudad").val().trim().length == 0) {
-                alert("debe ingresar una ciudad")
-
-                mensaje = "debe ingresar una ciudad";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-        $("#comuma").focusout(function(){
-            if ($("#comuna").val()==0) {
-                alert("debe ingresar una ciudad")
-
-                mensaje = "debe ingresar una ciudad";
-                $("#alerta").html(mensaje);
-                $("#alerta").show();    
-            } else {
-                $("#alerta").hide();
-            }
-        });
-
-
         $("#formularioForm").submit(function(){
-            if ($("#nombre").val().trim().length == 0) {
+            if ($("#txtNombre").val().trim().length == 0) {
                 alert("debe ingresar el nombre")
                 event.preventDefault();
             }
         });
 
         $("#formularioForm").submit(function(){
-            if ($("#apellido").val().trim().length == 0) {
+            if ($("#txtApellido").val().trim().length == 0) {
                 alert("debe ingresar el apellido")
                 event.preventDefault();
             }
         });
 
         $("#formularioForm").submit(function(){
-            if ($("#nombreUsuario").val().trim().length == 0) {
-                alert("debe ingresar el nombre de usuario")
-                event.preventDefault();
+            if ($("#txtCiudad").val().trim().length == 0) {
+                alert("debe ingresar una ciudad")
             }
         });
 
         $("#formularioForm").submit(function(){
-            if ($("#mail").val().trim().length == 0) {
-                alert("debe ingresar el mail")
+            if ($("#txtcomuna").val().trim() == 0) {
+                alert("debe ingresar una comuna")
                 event.preventDefault();
             }
         });
-
         $("#formularioForm").submit(function(){
-            if ($("#contraseña").val().trim().length == 0) {
+            if ($("#txtCodigoPostal").val().trim().length == 0) {
+                alert("debe ingresar un codigo postal")
+                event.preventDefault();
+            }
+        });
+        $("#formularioForm").submit(function(){
+            if ($("#txtPassword").val().trim().length == 0) {
                 alert("debe ingresar una contraseña")
                 event.preventDefault();
             }
         });
 
+        var Fn = {
+            // Valida el rut con su cadena completa "XXXXXXXX-X"
+            validaRut : function (rutCompleto) {
+                rutCompleto = rutCompleto.replace("‐","-");
+                if (!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/.test( rutCompleto ))
+                    return false;
+                var tmp 	= rutCompleto.split('-');
+                var digv	= tmp[1]; 
+                var rut 	= tmp[0];
+                if ( digv == 'K' ) digv = 'k' ;
+                
+                return (Fn.dv(rut) == digv );
+            },
+            dv : function(T){
+                var M=0,S=1;
+                for(;T;T=Math.floor(T/10))
+                    S=(S+T%10*(9-M++%6))%11;
+                return S?S-1:'k';
+            }
+        }
+
+
+        
+        
         $("#formularioForm").submit(function(){
-            if ($("#ciudad").val().trim().length == 0) {
-                alert("debe ingresar una ciudad")
+            if (Fn.validaRut( $("#txtrut").val() )){
+                $("#msgerror").html("El rut ingresado es válido :D").hide();
+            } else {
+                alert("debe ingresar un rut valido")
+                event.preventDefault();
+            }
+        });
+        
+
+
+
+        $('#formularioForm').submit(function() {
+
+            var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+        
+            if (regex.test($('#txtEmail').val().trim())) {
+                $("#msgerror").html("El rut ingresado es válido :D").hide();
+        
+            } else {
+                alert("debe ingresar un mail valido")
                 event.preventDefault();
             }
         });
 
-        $("#formularioForm").submit(function(){
-            if ($("#comuna").val()==0) {
-                alert("debe ingresar una ciudad")
-                event.preventDefault();
+
+
+        $('#txtPassword').keyup(function () {
+            $('#strengthMessage').html(checkStrength($('#txtPassword').val()))
+        })
+
+
+
+        function checkStrength(password) {
+            var strength = 0
+            if (password.length < 6) {
+                $('#strengthMessage').removeClass()
+                $('#strengthMessage').addClass('Short')
+                return 'demasiado corta'
             }
-        });
+            if (password.length > 7) strength += 1
+            // If password contains both lower and uppercase characters, increase strength value.
+            if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) strength += 1
+            // If it has numbers and characters, increase strength value.
+            if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) strength += 1
+            // If it has one special character, increase strength value.
+            if (password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+            // If it has two special characters, increase strength value.
+            if (password.match(/(.*[!,%,&,@,#,$,^,*,?,_,~].*[!,%,&,@,#,$,^,*,?,_,~])/)) strength += 1
+            // Calculated strength value, we can return messages
+            // If value is less than 2
+            if (strength < 2) {
+                $('#strengthMessage').removeClass()
+                $('#strengthMessage').addClass('Weak')
+                return 'Debil'
+            } else if (strength == 2) {
+                $('#strengthMessage').removeClass()
+                $('#strengthMessage').addClass('Good')
+                return 'Buena'
+            } else {
+                $('#strengthMessage').removeClass()
+                $('#strengthMessage').addClass('Strong')
+                return 'Fuerte'
+            }
+        }
 
     });
 
-// STICKY TOP
-window.onscroll = function() {myFunction()};
 
-var navbar = document.getElementById("navbar");
-
-var sticky = navbar.offsetTop;
-
-function myFunction(){
-    if (window.pageYOffset >= sticky){
-        navbar.classList.add("sticky")
-    } else{
-        navbar.classList.remove("sticky")
-    }
-}
-
-window.onscroll = function() {myFunction()};
-
-// busqueda menu
-
-function muestra_oculta(id){
-    if(document.getElementById){
-        var el = document.getElementById(id);
-        el.style.display = (el.style.display == 'none') ? 'block' : 'none';
-    }
-}
-window.onload = function(){
-    muestra_oculta('caja');
-}
