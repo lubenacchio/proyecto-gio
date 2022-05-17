@@ -1,4 +1,8 @@
+
+
+
 // VALIDACION DE FORMULARIO
+
 $(document).ready(
     
     function(){
@@ -7,42 +11,77 @@ $(document).ready(
 
         $("#alerta").hide();
 
-        $("#formularioForm").submit(function(){
+        $("#txtNombre").focusout(function(){
             if ($("#txtNombre").val().trim().length == 0) {
-                alert("debe ingresar el nombre")
+                mensaje = "Debe ingresar un nombre";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
                 event.preventDefault();
+            }else{
+                $('#alerta').hide();
             }
         });
 
-        $("#formularioForm").submit(function(){
+        $("#txtApellido").focusout(function(){
             if ($("#txtApellido").val().trim().length == 0) {
-                alert("debe ingresar el apellido")
+                mensaje = "Debe ingresar un apellido";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
                 event.preventDefault();
+            }else{
+                $('#alerta').hide();
+            }
+        });
+        $("#txtNumeroTelefono").focusout(function(){
+            if ($("#txtNumeroTelefono").val().trim().length == 0) {
+                mensaje = "Debe ingresar un numero de telefono";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
+                event.preventDefault();
+            }else{
+                $('#alerta').hide();
             }
         });
 
-        $("#formularioForm").submit(function(){
+        $("#txtCiudad").focusout(function(){
             if ($("#txtCiudad").val().trim().length == 0) {
-                alert("debe ingresar una ciudad")
+                mensaje = "Debe ingresar una ciudad";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
+                event.preventDefault();
+            }else{
+                $('#alerta').hide();
             }
         });
 
-        $("#formularioForm").submit(function(){
+        $("#txtcomuna").focusout(function(){
             if ($("#txtcomuna").val().trim() == 0) {
-                alert("debe ingresar una comuna")
+                mensaje = "Debe seleccionar una comuna";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
                 event.preventDefault();
+            }else{
+                $('#alerta').hide();
             }
         });
-        $("#formularioForm").submit(function(){
+        $("#txtCodigoPostal").focusout(function(){
             if ($("#txtCodigoPostal").val().trim().length == 0) {
-                alert("debe ingresar un codigo postal")
+                mensaje = "Debe ingresar un codigo postal";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
                 event.preventDefault();
+            }else{
+                $('#alerta').hide();
             }
         });
-        $("#formularioForm").submit(function(){
+        $("#txtPassword").submit(function(){
             if ($("#txtPassword").val().trim().length == 0) {
-                alert("debe ingresar una contraseña")
+                mensaje = "Debe ingresar una contrasena";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
                 event.preventDefault();
+            }else{
+                $('#alerta').hide();
             }
         });
 
@@ -136,6 +175,15 @@ $(document).ready(
             }
         }
 
+        $('.error').hide();
+        $('formularioForm').submit(function(){
+            clave = ('#txtPassword').val();
+            clave2 = ('#txtConfirmPassword').val();
+            if(clave !== clave2){
+                $('#clavesNoIguales').show();
+                return;
+            }
+        })
     });
 
 
