@@ -19,41 +19,75 @@
     <title>Gatos</title>
 </head>
      <!-- barra de navegacion-->
-<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-dark p-3">
-    <div class="container-fluid">
-        <img src="./img indice/can-cat.png" alt="" width="70" style="padding-right: 1rem;" >
-        <a href="/index.html" class="navbar-brand">Can-Cat</a>
-        <button type="button" 
-        class="navbar-toggler" 
-        data-bs-toggle="collapse" 
-        data-bs-target="#MenuNavegacion" 
-        aria-controls="MenuNavegacion" 
-        aria-expanded="false"
-        aria-label="Toggle navegation"> 
-           <span class="navbar-toggler-icon"></span>
-        </button>
-        <div id="MenuNavegacion" class="collapse navbar-collapse">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-               <li class="nav-item"><a class="nav-link active" href="/index.html">Inicio</a></li>
-               <li class="nav-item"><a class="nav-link active" href="/catalogo.html">Catalogo</a></li>
-            </ul>
-            <div class="dropdown"> <!-- Menu desplegable-->
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false" style="margin-right: 12px;"><i class="fa-solid fa-user"></i>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                    <li><a class="dropdown-item" href="./sesion.html">Crear Cuenta</a></li>
-                    <li><a class="dropdown-item" href="./cuenta.html">Iniciar Secion</a></li>
-                    <li><a class="dropdown-item" href="./carrito.html">Mi carrito</a></li>
-                </ul>
-            </div>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Buscar">
-                    <button class="btn btn-outline-success" type="submit">Buscar</button>
-              </form>
-        </div>
-    </div>
-</nav>
 <body>
+    <div class="header-nav">
+        <section class="Header">
+          <div class="header-anuncement">
+            <nav id="nav-anuncio">
+              <div class="container-fluid">
+                <marquee behavior="" direction="">
+                  <span class="navbar-brand h4">ESTE ES UN ANUNCIO</span>
+                </marquee>
+              </div>
+            </nav>
+            <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <div class="container">
+                <img src="./img indice/can-cat.png" class="navbar-brand" width="50">
+                <a href="/index.html" class="navbar-brand">Can-Cat</a>
+                <button type="button" 
+                      class="navbar-toggler" 
+                      data-bs-toggle="collapse" 
+                      data-bs-target="#MenuNavegacion" 
+                      aria-controls="Menu" 
+                      aria-expanded="false"
+                      aria-label="Toggle navegation"> 
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="MenuNavegacion">
+                  <ul class="navbar-nav m-lg-auto" id="lista1">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/catalogo.html">CATALOGO</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="/catalogo.html">OFERTAS</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="/suscripcion.html">SUSCRIBIRSE</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link active" href="/sobreNosotros.html">SOBRE NOSOTROS</a>
+                      </li>
+                  </ul>
+                  <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
+                     <li class="nav-item">
+                        <a class="nav-link active" href="/sesion.html">
+                          <i class="fa-regular fa-circle-user"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/meGusta.html">
+                        <i class="fa-regular fa-heart"></i>
+                       </a>
+                     </li>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/index.html">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                       </a>
+                     </li>
+  
+                     <li class="nav-item">
+                       <a class="nav-link active" href="/carrito.html">
+                         <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                      </li>
+                  </ul>  
+                 </div>
+              </div>
+            </nav>
+            </div>
+        </section>
+    </div>
     <!-- titulo -->
     <div class="home-title">
         <h1 style="font-family: 'Bebas Neue', cursive;">Gatos</h1>
