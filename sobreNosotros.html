@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;1,400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f829be9907.js" crossorigin="anonymous"></script> 
+    <!-- google foont-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet"> 
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/java.js"></script>
+    <link rel="shortcut icon" href="./img indice/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img indice/favicon.ico" type="image/x-icon">
+    <title>Crear Usuario</title>
+</head>
+  <!-- BARRA NAVEGACION-->
+  <body id="collections">
+    <div class="header-nav">
+      <section class="Header">
+        <div class="header-anuncement">
+          <nav id="nav-anuncio">
+            <div class="container-fluid">
+              <marquee behavior="" direction="">
+                <span class="navbar-brand h4">ESTE ES UN ANUNCIO</span>
+              </marquee>
+            </div>
+          </nav>
+          <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+              <img src="./img indice/can-cat.png" class="navbar-brand" width="50">
+              <a href="/index.html" class="navbar-brand">Can-Cat</a>
+              <button type="button" 
+                    class="navbar-toggler" 
+                    data-bs-toggle="collapse" 
+                    data-bs-target="#MenuNavegacion" 
+                    aria-controls="Menu" 
+                    aria-expanded="false"
+                    aria-label="Toggle navegation"> 
+                      <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="MenuNavegacion">
+                <ul class="navbar-nav m-lg-auto" id="lista1">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="/catalogo.html">CATALOGO</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/catalogo.html">OFERTAS</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/suscripcion.html">SUSCRIBIRSE</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active" href="/sobreNosotros.html">SOBRE NOSOTROS</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
+                   <li class="nav-item">
+                      <a class="nav-link active" href="/sesion.html">
+                        <i class="fa-regular fa-circle-user"></i>
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/meGusta.html">
+                      <i class="fa-regular fa-heart"></i>
+                     </a>
+                   </li>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/index.html">
+                      <i class="fa-solid fa-magnifying-glass"></i>
+                     </a>
+                   </li>
+
+                   <li class="nav-item">
+                     <a class="nav-link active" href="/carrito.html">
+                       <i class="fa-solid fa-cart-shopping"></i>
+                      </a>
+                    </li>
+                </ul>  
+               </div>
+            </div>
+          </nav>
+          </div>
+      </section>
+    </div>
+
+<!-- FORMULARIO-->
+    <div class="container-fluid" id="formulario" style="padding: 5rem;">
+        <form class="row needs-validation" id="formularioForm" novalidate>
+          <div class="row">
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre</label>
+              <input type="text" class="form-control" id="nombre" name="nombre" value="" required>
+              <div class="valid-feedback">
+                se ve bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="apellido" class="form-label">Apellido</label>
+              <input type="text" class="form-control" id="apellido" name="apellido" value="" required>
+              <div class="valid-feedback">
+                se ve bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="nombreUsuario" class="form-label">Nombre Usuario</label>
+              <input type="text" class="form-control" id="nombreUsuario" name="nombreUsuario" value="" required>
+              <div class="valid-feedback">
+                se ve bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="mail" class="form-label">Mail</label>
+              <input type="text" class="form-control" id="mail" name="mail" value="" required>
+              <div class="valid-feedback">
+                se ve bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="contraseña" class="form-label">Contraseña</label>
+              <input type="password" class="form-control" id="contraseña" value="" name="contraseña" required>
+              <div class="valid-feedback">
+                se ve bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="ciudad" class="form-label">Ciudad</label>
+              <input type="text" class="form-control" id="ciudad" value="" name="comuna" required>
+              <div class="valid-feedback">
+                se ve bien!
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="comuna" class="form-label">Comuna</label>
+              <select class="form-select" id="comuna" value="0" required>
+                <option selected disabled value="">Seleccione</option>
+                <option value="1">Santiago  </option>
+                <option value="2">Conchalí</option>
+                <option value="3">Huechuraba</option>
+                <option value="4">Independencia</option>
+                <option value="5">Quilicura</option>
+                <option value="6">Recoleta</option>
+                <option value="7">Renca</option>
+                <option value="8">Las Condes</option>
+                <option value="9">Lo Barnechea</option>
+                <option value="10">Providencia</option>
+                <option value="11">Vitacura</option>
+                <option value="12">La Reina</option>
+                <option value="13">Macul</option>
+                <option value="14">Ñuñoa</option>
+                <option value="15">Peñalolén</option>
+                <option value="16">La Florida</option>
+                <option value="17">La Granja</option>
+                <option value="18">El Bosque</option>
+                <option value="19">La Cisterna</option>
+                <option value="20">La Pintana</option>
+                <option value="21">San Ramón</option>
+                <option value="22">Lo Espejo</option>
+                <option value="23">Pedro Aguirre Cerda</option>
+                <option value="24">San Joaquín</option>
+                <option value="25">San Miguel</option>
+                <option value="26">Cerrillos</option>
+                <option value="27">Estación Central</option>
+                <option value="28">Maipú</option>
+                <option value="29">Cerro Navia</option>
+                <option value="30">Lo Prado</option>
+                <option value="31">Pudahuel</option>
+                <option value="32">Quinta Normal</option>
+              </select>
+              <div class="invalid-feedback">
+                Por favor seleccione una ciudad 
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label for="validationCustom05" class="form-label">codigo postal</label>
+              <input type="text" class="form-control" id="validationCustom05" required>
+              <div class="invalid-feedback">
+                Please provide a valid zip.
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                <label class="form-check-label" for="invalidCheck">
+                  Aceptas terminos y condiciones
+                </label>
+                <div class="invalid-feedback">
+                  You must agree before submitting.
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <input class="btn btn-primary" type="submit" id="btnEnviar">Ingresar</input>
+            </div>
+          </div>
+          </form>
+        </div>    
+
+
+<footer class="bg-dark text-center text-white" width="100">
+  <div class="container p-4 pb-0">
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://cancat.com/">www.cancat.com</a>
+  </div>
+</footer>
+</body>
+
+</html>
