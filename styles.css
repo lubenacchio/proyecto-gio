@@ -164,3 +164,7 @@ padding: 2rem;
 .mostrar {
   display: block;
 }
+.error{
+  color: red;
+  padding-left: 12px;
+}
