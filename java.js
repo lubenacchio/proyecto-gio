@@ -3,20 +3,54 @@
 
 // VALIDACION DE FORMULARIO
 
-$(document).ready(
+$(document).ready(function(){
+    $("carta").hide();
+    getLocation();
+    validador();
+    cargarAnimales();
+})  
+
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.warn("Geolocation is not supported by this browser.");
+    }
+    }
+
+    function showPosition(position) {
+       var urlBase = "https://www.metaweather.com/api"
+
+       $.get(urlBase+`/location/search/?lattlong=${position.coords.latitude},${position.coords.longitude}`,function(data){
+
+           $.get(urlBase+`/api/location/${data[0].woeid}/`,function(data){
+
+               $("#titulo").append(data.title)
+               $("#pais").append(data.parent.title)
+               $("#tempClima").append(data.consolidated_weather[0].the_temp+"°C")
+               $("#imagenClima").attr("src",`https://www.metaweather.com/static/img/weather/${data.consolidated_weather[0].weather_state_abbr}.svg`);
+               $("#carta").show();
+
+           })
+       })
+
+    }
     
-    function(){
+
+
+    function validador(){
 
         var mensaje="";
 
         $("#alerta").hide();
+        
 
         $("#txtNombre").focusout(function(){
             if ($("#txtNombre").val().trim().length == 0) {
                 mensaje = "Debe ingresar un nombre";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
-                event.preventDefault();
             }else{
                 $('#alerta').hide();
             }
@@ -27,7 +61,6 @@ $(document).ready(
                 mensaje = "Debe ingresar un apellido";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
-                event.preventDefault();
             }else{
                 $('#alerta').hide();
             }
@@ -36,8 +69,14 @@ $(document).ready(
             if ($("#txtNumeroTelefono").val().trim().length == 0) {
                 mensaje = "Debe ingresar un numero de telefono";
                 $('#alerta').html(mensaje);
-                $('#alerta').show();
-                event.preventDefault();
+            }else{
+                $('#alerta').hide();
+            }
+        });
+        $("#txtEmail").focusout(function(){
+            if ($("#txtEmail").val().trim().length == 0) {
+                mensaje = "Debe ingresar un mail";
+                $('#alerta').html(mensaje);
             }else{
                 $('#alerta').hide();
             }
@@ -48,7 +87,6 @@ $(document).ready(
                 mensaje = "Debe ingresar una ciudad";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
-                event.preventDefault();
             }else{
                 $('#alerta').hide();
             }
@@ -59,7 +97,6 @@ $(document).ready(
                 mensaje = "Debe seleccionar una comuna";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
-                event.preventDefault();
             }else{
                 $('#alerta').hide();
             }
@@ -69,19 +106,55 @@ $(document).ready(
                 mensaje = "Debe ingresar un codigo postal";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
-                event.preventDefault();
             }else{
                 $('#alerta').hide();
             }
         });
-        $("#txtPassword").submit(function(){
+        $("#txtPassword").focusout(function(){
             if ($("#txtPassword").val().trim().length == 0) {
                 mensaje = "Debe ingresar una contrasena";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
-                event.preventDefault();
             }else{
                 $('#alerta').hide();
+            }
+        });
+
+
+
+
+
+        $("#formularioForm").submit(function(){
+            if ($("#txtNombre").val().trim().length == 0) {
+                alert("debe ingresar el nombre")
+                event.preventDefault();
+            }
+        });
+
+        $("#formularioForm").submit(function(){
+            if ($("#txtApellido").val().trim().length == 0) {
+                alert("debe ingresar el apellido")
+                event.preventDefault();
+            }
+        });
+
+        $("#formularioForm").submit(function(){
+            if ($("#txtNumeroTelefono").val().trim().length == 0) {
+                alert("debe ingresar un numero de telefono")
+                event.preventDefault();
+            }
+        });
+
+        $("#formularioForm").submit(function() {
+
+            var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
+        
+            if (regex.test($('#txtEmail').val().trim())) {
+                $("#msgerror").html("El rut ingresado es válido :D").hide();
+        
+            } else {
+                alert("debe ingresar un mail valido")
+                event.preventDefault();
             }
         });
 
@@ -119,20 +192,30 @@ $(document).ready(
         });
         
 
-
-
-        $('#formularioForm').submit(function() {
-
-            var regex = /[\w-\.]{2,}@([\w-]{2,}\.)*([\w-]{2,}\.)[\w-]{2,4}/;
-        
-            if (regex.test($('#txtEmail').val().trim())) {
-                $("#msgerror").html("El rut ingresado es válido :D").hide();
-        
-            } else {
-                alert("debe ingresar un mail valido")
+        $("#formularioForm").submit(function(){
+            if ($("#txtCiudad").val().trim().length == 0) {
+                alert("debe ingresar una ciudad")
                 event.preventDefault();
             }
         });
+        $("#formularioForm").submit(function(){
+            if ($("##txtCodigoPostal").val().trim().length == 0) {
+                alert("debe ingresar un codigo postal")
+                event.preventDefault();
+            }
+        });
+        
+
+        $("#formularioForm").submit(function(){
+            if ($("#txtcomuna").val()==0) {
+                alert("debe ingresar una comnuna")
+                event.preventDefault();
+            }
+        });
+
+
+
+
 
 
 
@@ -176,14 +259,50 @@ $(document).ready(
         }
 
         $('.error').hide();
-        $('formularioForm').submit(function(){
+        $("#formularioForm").submit(function(){
             clave = ('#txtPassword').val();
             clave2 = ('#txtConfirmPassword').val();
             if(clave !== clave2){
-                $('#clavesNoIguales').show();
-                return;
+                alert("Las claves deben coincidir")
+                event.preventDefault();
             }
         })
-    });
+    };
 
+    function cargarAnimales(){
+        urlBaseAnimales = "https://zoo-animal-api.herokuapp.com/animals/rand/10";
+        $.get(urlBaseAnimales,function(data){
+            // console.log(data.results);
+            $.each(data.results,function(i,elemento){
+                // console.log(elemento);
+                $.get(elemento.url,function(dataAnimales){
+                    console.log(dataAnimales);
+                    $("#MisCartas").append(` <div id="${dataAnimales.id}" class="card">
+                      
+                        <div class="card-content">
+                        <div class="media">
+                            <div class="media-left">
+                            <figure class="image is-48x48">
+                                <img src="${dataAnimales.sprites.other["official-artwork"].front_default}" alt="Placeholder image">
+                            </figure>
+                            </div>
+                            <div class="media-content">
+                            <p class="title is-4">${dataAnimales.name}-${dataAnimales.id}</p>
+                            <p class="subtitle is-6">Tipo: ${dataAnimales.types[0].type.name}</p>
+                            </div>
+                        </div>
+                    
+                        <div class="content">
+                           Experiencia Base:  ${dataAnimales.base_experience}
+                        </div>
+                        </div>`);
+
+                        $(`#${dataAnimales.id}`).css('textTransform', 'capitalize');
+                        $.each(dataAnimales.types,function(i,tipo){
+                            console.log(tipo);
+                        })
+                })
+            })
+        });
+    }
 
