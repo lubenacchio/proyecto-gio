@@ -112,7 +112,7 @@ function getLocation() {
         });
         $("#txtPassword").focusout(function(){
             if ($("#txtPassword").val().trim().length == 0) {
-                mensaje = "Debe ingresar una contrasena";
+                mensaje = "Debe ingresar una contraseña";
                 $('#alerta').html(mensaje);
                 $('#alerta').show();
             }else{
@@ -139,8 +139,8 @@ function getLocation() {
         });
 
         $("#formularioForm").submit(function(){
-            if ($("#txtNumeroTelefono").val().trim().length == 0) {
-                alert("debe ingresar un numero de telefono")
+            if ($("#txtNumeroTelefono").val().trim().length == 0 || $("#txtNumeroTelefono").val().trim().length>11) {
+                alert("debe ingresar un numero de telefono valido")
                 event.preventDefault();
             }
         });
@@ -198,24 +198,38 @@ function getLocation() {
                 event.preventDefault();
             }
         });
-        $("#formularioForm").submit(function(){
-            if ($("##txtCodigoPostal").val().trim().length == 0) {
-                alert("debe ingresar un codigo postal")
-                event.preventDefault();
-            }
-        });
-        
+
 
         $("#formularioForm").submit(function(){
-            if ($("#txtcomuna").val()==0) {
+            if ($("#txtcomuna").val().trim() == 0) {
                 alert("debe ingresar una comnuna")
                 event.preventDefault();
             }
         });
+        $("#formularioForm").submit(function(){
+            if ($("#txtPassword").val().trim() == 0) {
+                alert("debe ingresar una contraseña")
+                event.preventDefault();
+            }
+        });
+        $("#formularioForm").submit(function(){
+            if ($("#txtConfirmPassword").val().trim() == 0) {
+                alert("debe confirmar contarseña")
+                event.preventDefault();
+            }
+        });
 
 
 
 
+        $("#formularioForm").submit(function(){
+            clave = ("#txtPassword").val();
+            clave2 = ("#txtConfirmPassword").val();
+            if(clave !== clave2){
+                alert("Las claves deben coincidir")
+                event.preventDefault();
+            }
+        });
 
 
 
@@ -258,17 +272,6 @@ function getLocation() {
             }
         }
 
-        $('.error').hide();
-        $("#formularioForm").submit(function(){
-            clave = ('#txtPassword').val();
-            clave2 = ('#txtConfirmPassword').val();
-            if(clave !== clave2){
-                alert("Las claves deben coincidir")
-                event.preventDefault();
-            }
-        })
-    };
-
     function cargarAnimales(){
         urlBaseAnimales = "https://zoo-animal-api.herokuapp.com/animals/rand/10";
         $.get(urlBaseAnimales,function(data){
@@ -304,5 +307,6 @@ function getLocation() {
                 })
             })
         });
-    }
+    }    };
+
 
