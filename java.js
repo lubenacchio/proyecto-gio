@@ -66,7 +66,7 @@ function getLocation() {
             }
         });
         $("#txtNumeroTelefono").focusout(function(){
-            if ($("#txtNumeroTelefono").val().trim().length == 0) {
+            if ($("#txtNumeroTelefono").val().trim().length == 3) {
                 mensaje = "Debe ingresar un numero de telefono";
                 $('#alerta').html(mensaje);
             }else{
@@ -82,6 +82,14 @@ function getLocation() {
             }
         });
 
+        $("#txtrut").focusout(function(){
+            if ($("#txtrut").val().trim().length == 0) {
+                mensaje = "Debe ingresar un rut";
+                $('#alerta').html(mensaje);
+            }else{
+                $('#alerta').hide();
+            }
+        });
         $("#txtCiudad").focusout(function(){
             if ($("#txtCiudad").val().trim().length == 0) {
                 mensaje = "Debe ingresar una ciudad";
@@ -202,7 +210,7 @@ function getLocation() {
 
         $("#formularioForm").submit(function(){
             if ($("#txtcomuna").val().trim() == 0) {
-                alert("debe ingresar una comnuna")
+                alert("debe ingresar una comuna")
                 event.preventDefault();
             }
         });
