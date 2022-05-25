@@ -28,27 +28,21 @@
           <div class="container-fluid">
             <div class="row">
               <marquee behavior="" direction="">   
-              <div class="card" id="carta">
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img loading="lazy" id="imagenClima" src="" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4" id="titulo"></p>
-                      <p class="subtitle is-6" id="pais"></p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <p id="tempClima"></p>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
+              <div id="caja1">
+                <h1 id="temperatura-valor" style="font-size:20px ;"></h1>
+                <h3 id="temperatura-descripcion" style="font-size:14px ;"></h3>
+              </div>
+              <div id="caja2">
+                <h2 id="ubicacion" style="font-size:20px;"></h2>
+              </div>
+              <div id="caja3">
+                <h1 id="viento-velocidad" style="font-size:20px ;"></h1>
+              </div>
+              <div id="caja4">
+                <img id="icono-animado" src="" alt="img" width="50" height="50" style="align-items:center ;">
+              </div>
+              </marquee>
             </div>
-            </div>
-            </marquee>
             </div>
           </div>
         </nav>
@@ -82,7 +76,7 @@
               </ul>
               <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
                  <li class="nav-item">
-                    <a class="nav-link active" href="/usuario.html">
+                    <a class="nav-link active" href="/cuenta.html">
                       <i class="fa-regular fa-circle-user"></i>
                     </a>
                 </li>
@@ -118,7 +112,6 @@
                     <div class="row">
                         <div class="col-md-6 mx-auto">
                           <div class="alert alert-danger sticky-top" role="alert" id="alerta">
-                            Error!
                           </div>
                             <div class="card border-secondary">
                                 <div class="card-header">
@@ -248,6 +241,7 @@
                                     <div class="form-group" id="botonesForm">
                                         <button type="submit" class="btn btn-success float-right rounded-0" id="btnEnviar">registar</button>
                                         <button type="reset" class="btn btn-danger float-right rounded-0" id="btnReset">Limpiar</button>
+                                        <button  class="btn btn-primary" style="margin-left:135px;"> ya tiene cuenta?</button>
                                     </div>
                                 </div>
                             </div>

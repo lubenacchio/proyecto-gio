@@ -17,8 +17,9 @@
   <script type="text/javascript" src="/java.js"></script>
   <link rel="shortcut icon" href="./img indice/favicon.ico" type="image/x-icon">
   <link rel="icon" href="./img indice/favicon.ico" type="image/x-icon">
-  <title>Can-cat</title>
+  <title>Animales</title>
 </head>
+
 <!-- BARRA NAVEGACION-->
 <body id="collections">
   <div class="header-nav">
@@ -28,27 +29,21 @@
           <div class="container-fluid">
             <div class="row">
               <marquee behavior="" direction="">   
-              <div class="card" id="carta">
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img loading="lazy" id="imagenClima" src="" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4" id="titulo"></p>
-                      <p class="subtitle is-6" id="pais"></p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <p id="tempClima"></p>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
+              <div id="caja1">
+                <h1 id="temperatura-valor" style="font-size:20px ;"></h1>
+                <h3 id="temperatura-descripcion" style="font-size:14px ;"></h3>
+              </div>
+              <div id="caja2">
+                <h2 id="ubicacion" style="font-size:20px;"></h2>
+              </div>
+              <div id="caja3">
+                <h1 id="viento-velocidad" style="font-size:20px ;"></h1>
+              </div>
+              <div id="caja4">
+                <img id="icono-animado" src=""  width="50" height="50" style="align-items:center ;">
+              </div>
+              </marquee>
             </div>
-            </div>
-            </marquee>
             </div>
           </div>
         </nav>
@@ -82,7 +77,7 @@
               </ul>
               <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
                  <li class="nav-item">
-                    <a class="nav-link active" href="/usuario.html">
+                    <a class="nav-link active" href="/cuenta.html">
                       <i class="fa-regular fa-circle-user"></i>
                     </a>
                 </li>
@@ -110,8 +105,75 @@
         </div>
     </section>
   </div>
-        <div class="is-mobile" id="MisCartas">  
+
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="results">
+        <div id="dog_result" class="result">
+          <p>Perros en Adopcion</p>
         </div>
       </div>
+      <div class="buttons" id="botonesAnimales">
+        <button  type="button" class="btn btn-primary" id="dog_btn">Ver
+        <button type="button" class="btn btn-danger" >♡</button>
+      </div>
+    </div>
+  </div>
+
+<div class="container" id="descripcionAnimal" >
+  <div class="row">
+      <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              Descripcion
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Perro bonito.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              Peso,raza y altura
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">Peso : 20 KG <br>Edad: 10 años <br>Tamaño: mediano</div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+<footer class="bg-dark text-center text-white" width="100">
+  <div class="container p-4 pb-0">
+    <section class="mb-4">
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fa-brands fa-whatsapp"></i
+      ></a>
+    </section>
+  </div>
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2022 Copyright:
+    <a class="text-white" href="https://cancat.com/">www.cancat.com</a>
+  </div>
+</footer>
 </body>
+
 </html>

@@ -21,163 +21,19 @@
 </head>
 <!-- BARRA NAVEGACION-->
 <body id="collections">
-  <div class="header-nav">
-    <section class="Header">
-      <div class="header-anuncement">
-        <nav id="nav-anuncio">
-          <div class="container-fluid">
-            <div class="row">
-              <marquee behavior="" direction="">   
-              <div class="card" id="carta">
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img loading="lazy" id="imagenClima" src="" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4" id="titulo"></p>
-                      <p class="subtitle is-6" id="pais"></p>
-                    </div>
-                  </div>
-                  <div class="content">
-                    <p id="tempClima"></p>
-                    <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-                  </div>
-                </div>
-            </div>
-            </div>
-            </marquee>
-            </div>
-          </div>
-        </nav>
-        <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <div class="container">
-            <img src="./img indice/can-cat.png" class="navbar-brand" width="50">
-            <a href="/index.html" class="navbar-brand">Can-Cat</a>
-            <button type="button" 
-                  class="navbar-toggler" 
-                  data-bs-toggle="collapse" 
-                  data-bs-target="#MenuNavegacion" 
-                  aria-controls="Menu" 
-                  aria-expanded="false"
-                  aria-label="Toggle navegation"> 
-                    <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="MenuNavegacion">
-              <ul class="navbar-nav m-lg-auto" id="lista1">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/catalogo.html">CATALOGO</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/catalogo.html">OFERTAS</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/usuario.html">SUSCRIBIRSE</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="/animales.html">Animales</a>
-                  </li>
-              </ul>
-              <ul class="navbar-nav mb-2 mb-md-0" id="lista2">
-                 <li class="nav-item">
-                    <a class="nav-link active" href="/usuario.html">
-                      <i class="fa-regular fa-circle-user"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="/usuario.html">
-                    <i class="fa-regular fa-heart"></i>
-                   </a>
-                 </li>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="/index.html">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                   </a>
-                 </li>
-
-                 <li class="nav-item">
-                   <a class="nav-link active" href="/carrito.html">
-                     <i class="fa-solid fa-cart-shopping"></i>
-                    </a>
-                  </li>
-              </ul>  
-             </div>
-          </div>
-        </nav>
-        </div>
-    </section>
-  </div>
-    <div class="container-md p-5" id="formulario">
-      <form class="row needs-validation" novalidate>
-          <div class="col-md-6">
-          <label for="validationCustom01" class="form-label">Usuario</label>
-          <input type="text" class="form-control" id="validationCustom01" value="" required>
-          <div class="valid-feedback">
-              se ve bien!
-          </div>
-          </div> 
-          <div class="col-md-6">
-          <label for="validationCustom02" class="form-label">Contraseña</label>
-          <input type="text" class="form-control" id="validationCustom02" value="" required>
-          <div class="valid-feedback">
-              se ve bien!
-          </div>
-          </div>
-          <div class="container-sm py-lg-4 ">
-              <button class="btn btn-primary p-2" type="submit">Ingresar</button>    
-      </form>
-  </div>
-<!--carrusel -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="./img indice/perro-pug.jpg" class="d-block w-100" alt="img 1">
-        </div>
-        <div class="carousel-item">
-            <img src="./img indice/cachorro y gato.jpg" class="d-block w-100" alt="img 2">
-        </div>
-        <div class="carousel-item">
-            <img src="./img indice/gato-con-juguete_3840x2160_xtrafondos.com (1).jpg" class="d-block w-100" alt="im3 3">
-        </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Siguiente</span>
-        </button>
+  <div class="login-form" id="cuenta-form">
+    <h1>cancat</h1>
+    <div class="form-group " id="">
+      <input type="text" class="form-control" placeholder="Usuario" id="UserName">
+      <i class="fa fa-user"></i>
     </div>
-</body>
-<footer class="bg-dark text-center text-white p-sm-4">
-  <div class="container-fluid">
-    <section class="mb-4">
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-facebook-f"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-twitter"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-google"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fab fa-instagram"></i
-      ></a>
-      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
-        ><i class="fa-brands fa-whatsapp"></i
-      ></a>
-    </section>
+    <div class="form-group log-status">
+      <input type="password" class="form-control" placeholder="Contraseña" id="Passwod">
+      <i class="fa fa-lock"></i>
+    </div>
+      <a class="link" href="./usuario.html">Crear cuenta</a>
+      <a class="link" href="#">Olvido su contraseña?</a>
+      <button type="button" class="log-btn" >Ingresar</button>
   </div>
-</footer>
-
+</body>
 </html>

@@ -7,36 +7,114 @@ $(document).ready(function(){
     $("carta").hide();
     getLocation();
     validador();
-    cargarAnimales();
+    animales();
+
+
 })  
 
 
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else {
-        console.warn("Geolocation is not supported by this browser.");
-    }
-    }
+    function getLocation() {
+        let lon
+        let lat
 
-    function showPosition(position) {
-       var urlBase = "https://www.metaweather.com/api"
+        let temperaturaValor = document.getElementById('temperatura-valor')
+        let temperaturaDescripcion = document.getElementById('temperatura-descripcion')
 
-       $.get(urlBase+`/location/search/?lattlong=${position.coords.latitude},${position.coords.longitude}`,function(data){
+        let ubicacion = document.getElementById('ubicacion')
+        let iconoAnimado = document.getElementById('icono-animado')
 
-           $.get(urlBase+`/api/location/${data[0].woeid}/`,function(data){
+        let vientoVelocidad = document.getElementById('viento-velocidad')
 
-               $("#titulo").append(data.title)
-               $("#pais").append(data.parent.title)
-               $("#tempClima").append(data.consolidated_weather[0].the_temp+"°C")
-               $("#imagenClima").attr("src",`https://www.metaweather.com/static/img/weather/${data.consolidated_weather[0].weather_state_abbr}.svg`);
-               $("#carta").show();
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(posicion =>{
+                console.log(posicion.coords.latitude)
+                lon = posicion.coords.longitude
+                lat = posicion.coords.latitude
 
-           })
-       })
+                const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=a28ef99838bcc7263ea32ca40fbaf94a`
+                
+                fetch(url)
+                .then( response => { return response.json() })
+                .then( data => {
 
-    }
+                    let temp = Math.round(data.main.temp)
+                    temperaturaValor.textContent = `${temp} °C`
+
+
+                    let desc = data.weather[0].description
+                    temperaturaDescripcion.textContent = desc.toUpperCase()
+
+                    ubicacion.textContent = data.name
+                    
+                    vientoVelocidad.textContent = `${data.wind.speed} m/s`
+                    
+                /* console.log(data.weather[0].icon)
+                    let iconCode = data.weather[0].icon
+                    const urlIcon = `https://openweathermap.org/img/wn/${iconCode}.png`
+                    console.log(urlIcon)
+                    */
+                console.log(data.weather[0].main)
+                switch(data.weather[0].main){
+                    case 'clear':
+                        iconoAnimado.src = 'animated/day.svg'
+                        console.log(`LIMPIO`)
+                        break;
+                    case 'clouds':
+                        iconoAnimado.src = 'animated/cloudy-day-1.svg'
+                        console.log(`NUBES`)
+                        break;
+                    case 'Thunderstorm':
+                        iconoAnimado.src = 'animated/thunder.svg'
+                        console.log(`TORMENTA`)
+                        break;
+                    case 'Drizzle':
+                        iconoAnimado.src = 'animated/rainy-2.svg'
+                        console.log(`LLOVIZNA`)
+                        break;
+                    case 'Rain':
+                        iconoAnimado.src = 'animated/rainy-7.svg'
+                        console.log(`LLUVIA`)
+                        break;
+                    case 'Snow':
+                        iconoAnimado.src = 'animated/snowy-6.svg'
+                        console.log(`NIEVE`)
+                        break;
+                    case 'Atmosphere':
+                        iconoAnimado.src = 'animated/weather.svg'
+                        console.log(`ATMOSFERA`)
+                        break;
+                    default:
+                        iconoAnimado.src = 'animated/cloudy-day-1.svg'
+                        console.log('por defecto')    
+                }
+                })
+                .catch( error =>{
+                    console.log(error)
+                })
+            })
     
+        }};
+
+    function animales (){
+        const dog_btn = document.getElementById('dog_btn');
+        const dog_result = document.getElementById('dog_result');
+
+        dog_btn.addEventListener('click', getRandomDog);
+
+        function getRandomDog() {
+            fetch('https://random.dog/woof.json')
+                .then(res => res.json())
+                .then(data => {
+                    if(data.url.includes('.mp4')) {
+                        getRandomDog();
+                    }
+                    else {
+                        dog_result.innerHTML = `<img src=${data.url}  />`;
+                    }
+		});
+        }
+
+    }
 
 
     function validador(){
@@ -81,7 +159,6 @@ function getLocation() {
                 $('#alerta').hide();
             }
         });
-
         $("#txtrut").focusout(function(){
             if ($("#txtrut").val().trim().length == 0) {
                 mensaje = "Debe ingresar un rut";
@@ -90,6 +167,7 @@ function getLocation() {
                 $('#alerta').hide();
             }
         });
+
         $("#txtCiudad").focusout(function(){
             if ($("#txtCiudad").val().trim().length == 0) {
                 mensaje = "Debe ingresar una ciudad";
@@ -127,7 +205,17 @@ function getLocation() {
                 $('#alerta').hide();
             }
         });
-
+        $("#txtConfirmPassword").focusout(function(){
+            clave = ('#txtPassword').val();
+            clave2 = ('#txtConfirmPassword').val();
+            if(clave != clave2){
+                mensaje = "Las contrasenas deben coincidir";
+                $('#alerta').html(mensaje);
+                $('#alerta').show();
+            }else{
+                $('#alerta').hide();
+            }
+        });    
 
 
 
@@ -226,18 +314,16 @@ function getLocation() {
                 event.preventDefault();
             }
         });
-
-
-
-
         $("#formularioForm").submit(function(){
-            clave = ("#txtPassword").val();
-            clave2 = ("#txtConfirmPassword").val();
+            clave = ('#txtPassword').val();
+            clave2 = ('#txtConfirmPassword').val();
             if(clave !== clave2){
                 alert("Las claves deben coincidir")
                 event.preventDefault();
             }
         });
+
+
 
 
 
@@ -279,42 +365,4 @@ function getLocation() {
                 return 'Fuerte'
             }
         }
-
-    function cargarAnimales(){
-        urlBaseAnimales = "https://zoo-animal-api.herokuapp.com/animals/rand/10";
-        $.get(urlBaseAnimales,function(data){
-            // console.log(data.results);
-            $.each(data.results,function(i,elemento){
-                // console.log(elemento);
-                $.get(elemento.url,function(dataAnimales){
-                    console.log(dataAnimales);
-                    $("#MisCartas").append(` <div id="${dataAnimales.id}" class="card">
-                      
-                        <div class="card-content">
-                        <div class="media">
-                            <div class="media-left">
-                            <figure class="image is-48x48">
-                                <img src="${dataAnimales.sprites.other["official-artwork"].front_default}" alt="Placeholder image">
-                            </figure>
-                            </div>
-                            <div class="media-content">
-                            <p class="title is-4">${dataAnimales.name}-${dataAnimales.id}</p>
-                            <p class="subtitle is-6">Tipo: ${dataAnimales.types[0].type.name}</p>
-                            </div>
-                        </div>
-                    
-                        <div class="content">
-                           Experiencia Base:  ${dataAnimales.base_experience}
-                        </div>
-                        </div>`);
-
-                        $(`#${dataAnimales.id}`).css('textTransform', 'capitalize');
-                        $.each(dataAnimales.types,function(i,tipo){
-                            console.log(tipo);
-                        })
-                })
-            })
-        });
-    }    };
-
-
+    };
